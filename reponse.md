@@ -92,7 +92,7 @@ Le protocole ARP sert à identifier les appareils qui utilisent une adresse IP e
 
 ```
 Votre réponse :
-Une requête DNS de type A permet de connaître l'adresse IPv4 associée à un nom de domaine, tandis qu'une requête DNS de type AAAA permet de connaître l'adresse IPv6 qui correspond à un nom de domaine.  Par contre, la plupart des sites Web ont seulement une adresse IP de type IPv4, mais pas IPv6, alors que l'IPv6 est une méthode d'adressage encore peu utilisée. 
+Une requête DNS de type A permet de connaître l'adresse IPv4 associée à un nom de domaine, tandis qu'une requête DNS de type AAAA permet de connaître l'adresse IPv6 qui correspond à un nom de domaine.  Par contre, beaucoup de sites Web ont seulement une adresse IP de type IPv4, mais pas IPv6, alors que l'IPv6 est une méthode d'adressage encore moins utilisée. 
 
 
 ```
@@ -101,6 +101,7 @@ Une requête DNS de type A permet de connaître l'adresse IPv4 associée à un n
 
 ```
 Votre réponse :
+La commande 'ping' envoie des paquets de données très légers (souvent au nombre de 4) et demande à la destination de lui retourner les paquets en envoyant la demande "Echo Request" pour chaque paquet.  Si la destination est joignable, elle va retourner les paquets à la source en retournant aussi le message "Echo Reply" pour chaque paquet.  Si la destination n'est pas joignable, les paquets ne seront pas retournés et seront perdus.  
 
 
 ```
@@ -109,6 +110,8 @@ Votre réponse :
 
 ```
 Votre réponse :
+Le protocole DNS passe par le port 53 et il utilise principalement le protocole de transport UDP.  Il utilise le protocole UDP car celui-ci est plus rapide que le TCP et crée moins de trafic sur les serveurs car il ne nécessite pas une connexion au même niveau que le protocole TCP.
+
 
 
 ```
