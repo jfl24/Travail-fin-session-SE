@@ -113,7 +113,6 @@ Votre réponse :
 Le protocole DNS passe par le port 53 et il utilise principalement le protocole de transport UDP.  Il utilise le protocole UDP car celui-ci est plus rapide que le TCP et crée moins de trafic sur les serveurs car il ne nécessite pas une connexion au même niveau que le protocole TCP.
 
 
-
 ```
 
 ---
@@ -126,22 +125,24 @@ Le protocole DNS passe par le port 53 et il utilise principalement le protocole 
 
 **Commande utilisée :**
 ```bash
+ipconfig.exe /all
 
 ```
 
 **Adresse IP :**
 ```
+L'adresse IP de mon ordinateur est 192.168.2.19, tandis que l'adresse de mon réseau est 192.168.2.0
 
 ```
 
 **Masque de sous-réseau :**
 ```
-
+255.255.255.0
 ```
 
 **Nom de l'interface réseau principale :**
 ```
-
+Le nom de mon interface réseau principale est : Carte réseau sans fil Wi-Fi
 ```
 
 ### b) Passerelle par défaut
