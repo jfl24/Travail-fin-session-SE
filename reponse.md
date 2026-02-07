@@ -149,30 +149,31 @@ Le nom de mon interface réseau principale est : Carte réseau sans fil Wi-Fi
 
 **Commande utilisée :**
 ```bash
-
+ipconfig.exe /all | grep -a "Passerelle" | awk -F": " '{print $2}'
 ```
 
 **Adresse de la passerelle :**
 ```
-
+192.168.2.1
 ```
 
 ### c) Serveurs DNS
 
 **Commande utilisée :**
 ```bash
+ipconfig.exe /all | grep "DNS"
 
 ```
 
 **Serveurs DNS configurés :**
 ```
-
+192.168.2.1
+207.164.234.193
 ```
 
 > 📸 **Capture d'écran 1** : Insérez votre capture montrant la configuration réseau
 > 
->![Capture 1](captures/capture1_config_reseau.png)
-
+>![alt text](<Capture d’écran 2026-02-06 232040.png>)
 ---
 
 ## Exercice 2 : Tests de connectivité avec ping (8 points)
@@ -181,55 +182,57 @@ Le nom de mon interface réseau principale est : Carte réseau sans fil Wi-Fi
 
 **Commande exacte utilisée :**
 ```bash
-
+ping -c 4 127.0.0.1
 ```
 
 **Résultat (succès/échec) :**
 ```
-
+Succès
 ```
 
 **Temps moyen de réponse :**
 ```
-
+0,052 ms
 ```
 
 ### b) Ping vers la passerelle - 4 paquets
 
 **Résultat (succès/échec) :**
 ```
-
+Succès
 ```
 
 **Temps moyen de réponse :**
 ```
-
+3.769 ms
 ```
 
 ### c) Ping vers 8.8.8.8 - 4 paquets
 
 **Résultat (succès/échec) :**
 ```
-
+Succès
 ```
 
 **Temps moyen de réponse :**
 ```
-
+5.139 ms
 ```
 
 ### d) Si le ping vers 8.8.8.8 fonctionne mais pas vers google.com, quel serait le problème probable ?
 
 ```
 Votre réponse :
+Le problème probable serait que mon serveur DNS est soit en panne ou défectueux et ne soit pas capable de traduire l'adresse "google.com" en adresse IP.
 
 
 ```
 
 > 📸 **Capture d'écran 2** : Insérez votre capture des tests ping
 > 
-> >![Capture 2](captures/capture2_ping.png)
-
+> ![alt text](<Capture d’écran 2026-02-07 131525.png>)
+![alt text](<Capture d’écran 2026-02-07 131544.png>)
+![alt text](<Capture d’écran 2026-02-07 131556.png>)
 ---
 
 ## Exercice 3 : Table ARP et résolution DNS (7 points)
