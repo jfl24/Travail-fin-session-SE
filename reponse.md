@@ -241,41 +241,43 @@ Le problème probable serait que mon serveur DNS est soit en panne ou défectueu
 
 **Commande utilisée :**
 ```bash
-
+arp.exe -a
 ```
 
 **Nombre d'entrées :**
 ```
-
+24
 ```
 
 **Une entrée (IP et MAC) :**
 ```
-
+192.168.2.14          f8-0f-f9-3f-7e-16
 ```
 
 ### b) Requête DNS pour www.collegemaisonneuve.qc.ca
 
 **Commande utilisée :**
 ```bash
-
+nslookup.exe www.collegemaisonneuve.qc.ca
 ```
 
 **Adresse IP obtenue :**
 ```
-
+L'adresse IP que j'ai obtenu est l'adresse de ma passerelle par défaut (192.168.2.1) car le nom de domaine est inexistant.
 ```
 
 ### c) Commande `dig` pour github.com - TTL
 
 **TTL (Time To Live) de l'enregistrement :**
 ```
-
+20
 ```
 
 > 📸 **Capture d'écran 3** : Insérez votre capture de la table ARP et d'une requête DNS
 > 
-> >![Capture 3](captures/capture3_arp_dns.png)
+> ![alt text](<Capture d’écran 2026-02-07 132950.png>)
+
+![alt text](<Capture d’écran 2026-02-07 133426.png>)
 
 ---
 
