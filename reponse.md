@@ -289,24 +289,26 @@ L'adresse IP que j'ai obtenu est l'adresse de ma passerelle par défaut (192.168
 
 | Information | Valeur observée |
 |-------------|-----------------|
-| Adresse MAC source | |
-| Adresse MAC destination | |
-| Adresse IP source | |
-| Adresse IP destination | |
-| Type ICMP (numéro) | |
-| Code ICMP | |
+| Adresse MAC source | 98:ba:5f:d2:57:09 |
+| Adresse MAC destination |  0c:ac:8a:f2:61:3a |
+| Adresse IP source |  192.168.2.19 |
+| Adresse IP destination |  8.8.8.8 |
+| Type ICMP (numéro) |   8          |
+| Code ICMP |            0          |
 
 ### Question : Différence entre le Type ICMP d'un "Echo Request" et d'un "Echo Reply" ?
 
 ```
 Votre réponse :
-
+Le type ICMP d'un "Echo Request" est égal à 8, tandis que le type ICMP d'un "Echo Reply" est égal à 0.  Aussi, le TTL des paquets n'est pas le même pour une Request ou une Reply.  
 
 ```
 
 > 📸 **Capture d'écran 4** : Capture Wireshark montrant les paquets ICMP avec le détail d'un paquet
 > 
-> ![Capture 4](captures/capture4_wireshark_icmp.png)
+> ![alt text](<Capture d’écran 2026-02-07 134624.png>)
+
+![alt text](<Capture d’écran 2026-02-07 140833.png>)
 
 ---
 
@@ -316,15 +318,19 @@ Votre réponse :
 
 | Information | Valeur observée |
 |-------------|-----------------|
-| Port source (requête) | |
-| Port destination (requête) | |
-| Protocole de transport | |
-| Type de requête DNS | |
-| Adresse IP dans la réponse | |
+| Port source (requête) |   53060  |
+| Port destination (requête) | 53  |
+| Protocole de transport |  UDP (User Datagram Protocol) |
+| Type de requête DNS |       A    |
+| Adresse IP dans la réponse |  140.82.113.3  |
 
 > 📸 **Capture d'écran 5** : Capture Wireshark montrant la requête et réponse DNS
 > 
-> ![Capture 5](captures/capture5_wireshark_dns.png)
+> ![alt text](<Capture d’écran 2026-02-07 141208.png>)
+![alt text](<Capture d’écran 2026-02-07 141219.png>)
+
+![alt text](<Capture d’écran 2026-02-07 141230.png>)
+
 
 ---
 
@@ -334,21 +340,25 @@ Votre réponse :
 
 | Information | ARP Request | ARP Reply |
 |-------------|-------------|-----------|
-| Adresse MAC source | | |
-| Adresse MAC destination | | |
-| Adresse IP recherchée | | |
+| Adresse MAC source | 0c:ac:8a:f2:61:31 | 98:ba:5f:d2:57:09 |
+| Adresse MAC destination | 00:00:00:00:00:00 |  0c:ac:8a:f2:61:3a |
+| Adresse IP recherchée | 198.168.2.19 | 198.168.2.1  |
 
 ### Question : Pourquoi l'adresse MAC de destination dans l'ARP Request est-elle `ff:ff:ff:ff:ff:ff` ?
 
 ```
 Votre réponse :
+Dans mon cas, l'adresse MAC semble plutôt être 00:00:00:00:00:00.  Je crois que c'est parce que la source de la requête (192.168.2.1) prend pour acquis qu'elle ne connaît pas l'adresse MAC de la destination.  C'est pour ça qu'elle envoie la requête.  Pour s'assurer que l'appareil associée à l'adresse IP 192.168.2.19 réponde avec la bonne adresse MAC.
 
 
 ```
 
 > 📸 **Capture d'écran 6** : Capture Wireshark montrant l'échange ARP
 > 
-> ![Capture 6](captures/capture6_wireshark_arp.png)
+> ![alt text](<Capture d’écran 2026-02-07 142705.png>)
+![alt text](<Capture d’écran 2026-02-07 142712.png>)
+
+![alt text](<Capture d’écran 2026-02-07 142720.png>)
 
 ---
 
