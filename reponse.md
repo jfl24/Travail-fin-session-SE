@@ -34,16 +34,20 @@
 
 | Protocole/Élément | N° Couche | Nom de la couche |
 |-------------------|-----------|------------------|
-| HTTP | | |
-| Adresse IP | | |
-| Câble Ethernet | | |
-| TCP | | |
-| Adresse MAC | | |
+| HTTP              |      7    |    Application   |
+| Adresse IP        |      3    |    Réseau        |
+| Câble Ethernet    |      2    |    Liaison       |
+| TCP               |      4    |    Transport     |
+| Adresse MAC       |      2    |    Liaison       |
 
 ### b) Différence entre le modèle OSI et TCP/IP (2.5 pts)
 
 ```
-Votre réponse :
+Votre réponse : 
+En fait, le modèle OSI n'a jamais existé dans le réel.  Il a été concu dans les années 80 pour bien comprendre la structure 
+du modèle TCP/IP.  Le modèle TCP/IP, lui, existe bien dans le réel et est LE modèle utilisé pour les réseaux informatiques depuis les années 70. 
+Le modèle OSI contient 7 couches, contrairement à 4 pour le modèle TCP/IP.  Le modèle OSI est plus complexe car il sert à bien comprendre le fonctionnement 
+des protocoles des réseaux.  Dans le modèle TCP/IP, les couches application, présentation et session sont regroupées en une seule couche application, et les couches liaison et physique sont regroupées dans une seule couche "accès réseau".
 
 
 ```
@@ -56,16 +60,17 @@ Votre réponse :
 
 | Adresse IP | Privée / Publique |
 |------------|-------------------|
-| 192.168.1.50 | |
-| 8.8.8.8 | |
-| 10.0.0.1 | |
-| 172.20.5.100 | |
-| 200.100.50.25 | |
+| 192.168.1.50 |     Privée      |
+| 8.8.8.8    |       Publique    |
+| 10.0.0.1   |       Privée      |
+| 172.20.5.100 |     Privée      |
+| 200.100.50.25 |    Publique    |
 
 ### b) Qu'est-ce qu'un masque de sous-réseau ? À quoi sert-il ? (2.5 pts)
 
 ```
 Votre réponse :
+Le masque de sous-réseau permet de distinguer la partie réseau et la partie hôte d'une adresse IP.  Il sert à connaître l'adresse d'un réseau local pour ensuite distribuer les adresses IP entre les différents appareils d'un sous-réseau.  Souvent, par exemple, dans un réseau local domiciliaire, le masque de sous-réseau est de 255.255.255.0, ce qui signifie que l'adresse du réseau occupe les 3 premiers octets de l'adresse IP, et chaque appareil est identifié dans le quatrième octet.  Par exemple, si l'adresse de mon réseau local est de 192.168.2.0, chacun de mes appareils (carte Wi-Fi, cellulaire, ChromeCast, etc.) peut avoir une adresse IP entre 192.168.2.1 et 192.168.2.254
 
 
 ```
@@ -77,7 +82,8 @@ Votre réponse :
 ### a) Expliquez le fonctionnement du protocole ARP. Pourquoi est-il nécessaire ? (3 pts)
 
 ```
-Votre réponse :
+Votre réponse : 
+Le protocole ARP sert à identifier les appareils qui utilisent une adresse IP en obtenant leur adresse MAC (unique à chaque appareil).  Il est nécessaire car, pour qu'un appareil envoie une trame à un autre appareil, il doit connaître l'adresse MAC de l'appareil.  Il permet aussi de s'assurer que lorsqu'un appareil envoie des données à une adresse IP, il envoie bien les données à la bonne destination.  Par exemple, le routeur d'un réseau local utilise souvent le protocole ARP pour s'assurer que l'adresse IP d'un ordinateur est toujours associée à l'adresse MAC de cet ordinateur.  Il sert à empêcher que des données soient envoyées à une adresse IP, mais que cette adresse IP ne corresponde plus à un appareil connu du réseau local.
 
 
 ```
@@ -86,6 +92,7 @@ Votre réponse :
 
 ```
 Votre réponse :
+Une requête DNS de type A permet de connaître l'adresse IPv4 associée à un nom de domaine, tandis qu'une requête DNS de type AAAA permet de connaître l'adresse IPv6 qui correspond à un nom de domaine.  Par contre, la plupart des sites Web ont seulement une adresse IP de type IPv4, mais pas IPv6, alors que l'IPv6 est une méthode d'adressage encore peu utilisée. 
 
 
 ```
