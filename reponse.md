@@ -173,7 +173,7 @@ ipconfig.exe /all | grep "DNS"
 
 > 📸 **Capture d'écran 1** : Insérez votre capture montrant la configuration réseau
 > 
->![alt text](<Capture d’écran 2026-02-06 232040.png>)
+>![alt text](<Captures/Capture d’écran 2026-02-06 232040.png>)
 ---
 
 ## Exercice 2 : Tests de connectivité avec ping (8 points)
@@ -230,9 +230,9 @@ Le problème probable serait que mon serveur DNS est soit en panne ou défectueu
 
 > 📸 **Capture d'écran 2** : Insérez votre capture des tests ping
 > 
-> ![alt text](<Capture d’écran 2026-02-07 131525.png>)
-![alt text](<Capture d’écran 2026-02-07 131544.png>)
-![alt text](<Capture d’écran 2026-02-07 131556.png>)
+> ![alt text](<Captures/Capture d’écran 2026-02-07 131525.png>)
+![alt text](<Captures/Capture d’écran 2026-02-07 131544.png>)
+![alt text](<Captures/Capture d’écran 2026-02-07 131556.png>)
 ---
 
 ## Exercice 3 : Table ARP et résolution DNS (7 points)
@@ -275,9 +275,9 @@ L'adresse IP que j'ai obtenu est l'adresse de ma passerelle par défaut (192.168
 
 > 📸 **Capture d'écran 3** : Insérez votre capture de la table ARP et d'une requête DNS
 > 
-> ![alt text](<Capture d’écran 2026-02-07 132950.png>)
+> ![alt text](<Captures/Capture d’écran 2026-02-07 132950.png>)
 
-![alt text](<Capture d’écran 2026-02-07 133426.png>)
+![alt text](<Captures/Capture d’écran 2026-02-07 133426.png>)
 
 ---
 
@@ -306,10 +306,9 @@ Le type ICMP d'un "Echo Request" est égal à 8, tandis que le type ICMP d'un "E
 
 > 📸 **Capture d'écran 4** : Capture Wireshark montrant les paquets ICMP avec le détail d'un paquet
 > 
-> ![alt text](<Capture d’écran 2026-02-07 134624.png>)
+> ![alt text](<Captures/Capture d’écran 2026-02-07 134624.png>)
 
-![alt text](<Capture d’écran 2026-02-07 140833.png>)
-
+![alt text](<Captures/Capture d’écran 2026-02-07 140833.png>)
 ---
 
 ## Exercice 5 : Capture et analyse DNS (8 points)
@@ -326,12 +325,10 @@ Le type ICMP d'un "Echo Request" est égal à 8, tandis que le type ICMP d'un "E
 
 > 📸 **Capture d'écran 5** : Capture Wireshark montrant la requête et réponse DNS
 > 
-> ![alt text](<Capture d’écran 2026-02-07 141208.png>)
-![alt text](<Capture d’écran 2026-02-07 141219.png>)
+> ![alt text](<Captures/Capture d’écran 2026-02-07 141208.png>)
+![alt text](<Captures/Capture d’écran 2026-02-07 141219.png>)
 
-![alt text](<Capture d’écran 2026-02-07 141230.png>)
-
-
+![alt text](<Captures/Capture d’écran 2026-02-07 141230.png>)
 ---
 
 ## Exercice 6 : Capture et analyse ARP (7 points)
@@ -355,11 +352,10 @@ Dans mon cas, l'adresse MAC semble plutôt être 00:00:00:00:00:00.  Je crois qu
 
 > 📸 **Capture d'écran 6** : Capture Wireshark montrant l'échange ARP
 > 
-> ![alt text](<Capture d’écran 2026-02-07 142705.png>)
-![alt text](<Capture d’écran 2026-02-07 142712.png>)
+>![alt text](<Captures/Capture d’écran 2026-02-07 142705.png>)
+![alt text](<Captures/Capture d’écran 2026-02-07 142712.png>)
 
-![alt text](<Capture d’écran 2026-02-07 142720.png>)
-
+![alt text](<Captures/Capture d’écran 2026-02-07 142720.png>)
 ---
 
 # Partie 4 : Script de diagnostic réseau (30 points)
