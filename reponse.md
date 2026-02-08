@@ -390,7 +390,7 @@ Cochez les fonctionnalités que vous avez implémentées :
 
 ```
 Décrivez ici les difficultés que vous avez rencontrées lors de la création du script :
-
+J'ai eu de la difficulté avec la manipulation de la fonction "printf" dans le script.  J'ai dû me fier pas mal à ce qu'on avait fait dans les exercices du cours.
 
 ```
 
