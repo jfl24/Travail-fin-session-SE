@@ -10,9 +10,17 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 MAUVE='\033[1;35m'
+BLEU='\033[0;34m'
+BLEU_GRAS='\033[1;34m'
 NC='\033[0m'
 
 # Utilisation des couleurs pour les futurs messages
+
+presentation_globale(){
+    echo -e "${YELLOW}============================================ ${NC}"
+    echo -e "${YELLOW}  $1              ${NC}"
+    echo -e "${YELLOW}============================================ ${NC}\n"
+}
 
 presentation(){
     echo -e "${MAUVE}============================== ${NC}"
@@ -28,6 +36,15 @@ print_warning(){
 }
 print_error(){
     echo -e "${RED}$1 ${NC}"
+}
+
+print_bleu(){
+    echo -e "${BLEU}$1 ${NC}"
+}
+
+print_bleu_gras(){
+    echo -e "${BLEU_GRAS}$1 ${NC}"
+
 }
 
 len_adress(){
@@ -88,48 +105,84 @@ test_connectivity(){
             return 1
         fi
     }
+    # Exécution des ping demandés
     execution_ping 127.0.0.1 localhost
     execution_ping $IP_PASSERELLE Passerelle par défaut
     execution_ping 8.8.8.8 Google
 
     # Fonction pour tester les DNS 
+    # Même chose ici.  On utilise la boucle if pour différencier les succès et les échecs.  
+    # Encore une fois, on envoie les échecs dans le dossier dev/null/ pour éviter que le script s'interrompe.
+    echo -e "\n"
     test_dns(){
         local adresse=$1
         if nslookup "$adresse" > /dev/null 2>&1; then
-            print_success "Succès!  La ou les adresses IP de $adresse ont été récupérées."
+            print_success "Résolution DNS : Succès!  La ou les adresses IP de $adresse ont été récupérées."
             return 0
         else
-            print_error "L'adrese IP de $adresse est malheureusement inexistante."
+            print_error "Résolution DNS : L'adrese IP de $adresse est malheureusement inexistante."
             return 1
         fi
     }
+    # Exécution de l'adresse de Google
     test_dns google.com
-
+    
 }
 
 show_arp_table(){
     echo -e "\n"
     presentation "Table ARP active"
+    # On planifie la taille de la largeur du tableau pour afficher les données
+    # On commence par la taille des adresses IP
     ip_len="255.255.255.255 "
+    # Taille des adresses MAC
     mac_len="00:00:00:00:00:00 "
+    # Ensuite, la taille totale pour la largeur du tableau
     taille_totale=$(( $(len_adress "255.255.255.255 ") + $(len_adress "00:00:00:00:00:00") + $(len_adress " dynamique") + 6 ))
     printf '%*s\n' "$taille_totale" '' | sed 's/ /^/g'
     printf "%-$(len_adress "255.255.255.255 ")s | %-$(len_adress "00:00:00:00:00:00")s | %-$(len_adress " dynamique")s\n" "Adresse IP" "Adresse MAC" "Type"
     printf '%*s\n' "$taille_totale" '' | sed 's/ /^/g'
+    # On excécute la commande arp -a pour obtenir les éléments de la table arp et on les écrit 1 par 1
     arp.exe -a 2>/dev/null | grep -a -i "dynamique" | while read line; do
         IP_ADRESS=$(echo $line | awk '{print $1}')
         MAC_ADRESS=$(echo $line | awk '{print $2}')
         TYPE=$(echo $line | awk '{print $3}')
         printf "%-$(len_adress $ip_len)s | %-$(len_adress $mac_len)s | %-$(len_adress " dynamique")s\n" "$IP_ADRESS" "$MAC_ADRESS" "$TYPE"
-    done
-    
+    done   
 }
 
+# 5. Effectuer des résolutions DNS
+show_dns_adress(){
+    echo -e "\n"
+    presentation "Résolutions d'adresses DNS"
+    # J'utilise d'abord la fonction définie précedemment pour séparer les succès des échecs.
+    # Mais je vais ajouter dans cette fonction la recherche des adresses IP en utilisant un grep
+    test_dns(){
+        local adresse=$1
+        if nslookup "$adresse" > /dev/null 2>&1; then
+            print_success "Résolution DNS : Succès!  La ou les adresses IP de $adresse ont été récupérées."
+            ADRESSE=$(nslookup "$adresse" | grep -E "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|[0-9a-z#]{1,5}:[0-9a-z]{1,4}:[0-9a-z]{1,4}:[0-9a-z]{1,4}:[0-9a-z]{1,4}:[0-9a-z]{1,4}:[0-9a-z]{1,4}:[0-9a-z]{1,4}" | awk -F" " '{print $2}' | sed '1,2d')
+            print_bleu_gras "Voici les adresses trouvées : "
+            print_bleu "$ADRESSE"
+            echo -e "\n"
+            return 0
+        else
+            print_error "Résolution DNS : L'adrese IP de $adresse est malheureusement inexistante."
+            return 1
+        fi
+    }
+    # Exécution de deux domaines différents
+    test_dns netflix.com
+    test_dns costco.ca
 
+}
+
+presentation_globale "Diagnostic Réseau"
 show_systeminfo
 show_networkconfig
 test_connectivity
 show_arp_table
+show_dns_adress
 
 
 
