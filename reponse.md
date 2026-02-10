@@ -101,7 +101,7 @@ Une requête DNS de type A permet de connaître l'adresse IPv4 associée à un n
 
 ```
 Votre réponse :
-La commande 'ping' envoie des paquets de données très légers (souvent au nombre de 4) et demande à la destination de lui retourner les paquets en envoyant la demande "Echo Request" pour chaque paquet.  Si la destination est joignable, elle va retourner les paquets à la source en retournant aussi le message "Echo Reply" pour chaque paquet.  Si la destination n'est pas joignable, les paquets ne seront pas retournés et seront perdus.  
+La commande 'ping' envoie des paquets de données légers (souvent au nombre de 4) et demande à la destination de lui retourner les paquets en envoyant la demande "Echo Request" pour chaque paquet.  Si la destination est joignable, elle va retourner les paquets à la source en retournant aussi le message "Echo Reply" pour chaque paquet.  Si la destination n'est pas joignable, les paquets ne seront pas retournés et seront perdus.  
 
 
 ```
@@ -370,21 +370,21 @@ Dans mon cas, l'adresse MAC semble plutôt être 00:00:00:00:00:00.  Je crois qu
 
 Cochez les fonctionnalités que vous avez implémentées :
 
-- [ ] Affichage du nom de l'hôte
-- [ ] Affichage de la date et heure
-- [ ] Affichage de la version du système
-- [ ] Affichage de l'adresse IP locale
-- [ ] Affichage de l'adresse de la passerelle
-- [ ] Affichage des serveurs DNS
-- [ ] Test de connectivité localhost
-- [ ] Test de connectivité passerelle
-- [ ] Test de connectivité Internet (8.8.8.8)
-- [ ] Test de résolution DNS (google.com)
-- [ ] Affichage de la table ARP
-- [ ] Résolution DNS de 2+ domaines
-- [ ] Gestion des erreurs (messages si échec)
-- [ ] Commentaires dans le code
-- [ ] Affichage clair avec titres de sections
+- [X] Affichage du nom de l'hôte
+- [X] Affichage de la date et heure
+- [X] Affichage de la version du système
+- [X] Affichage de l'adresse IP locale
+- [X] Affichage de l'adresse de la passerelle
+- [X] Affichage des serveurs DNS
+- [X] Test de connectivité localhost
+- [X] Test de connectivité passerelle
+- [X] Test de connectivité Internet (8.8.8.8)
+- [X] Test de résolution DNS (google.com)
+- [X] Affichage de la table ARP
+- [X] Résolution DNS de 2+ domaines
+- [X] Gestion des erreurs (messages si échec)
+- [X] Commentaires dans le code
+- [X] Affichage clair avec titres de sections
 
 ### Difficultés rencontrées (optionnel)
 
@@ -407,15 +407,15 @@ J'ai eu de la difficulté avec la manipulation de la fonction "printf" dans le s
 
 Vérifiez que votre projet contient :
 
-- [ ] `reponse.md` (ce fichier complété)
-- [ ] `diagnostic_reseau.sh` (votre script)
-- [ ] `captures/capture1_config_reseau.png`
-- [ ] `captures/capture2_ping.png`
-- [ ] `captures/capture3_arp_dns.png`
-- [ ] `captures/capture4_wireshark_icmp.png`
-- [ ] `captures/capture5_wireshark_dns.png`
-- [ ] `captures/capture6_wireshark_arp.png`
-- [ ] `captures/capture7_script_execution.png`
+- [X] `reponse.md` (ce fichier complété)
+- [X] `diagnostic_reseau.sh` (votre script)
+- [X] `captures/capture1_config_reseau.png`
+- [X] `captures/capture2_ping.png`
+- [X] `captures/capture3_arp_dns.png`
+- [X] `captures/capture4_wireshark_icmp.png`
+- [X] `captures/capture5_wireshark_dns.png`
+- [X] `captures/capture6_wireshark_arp.png`
+- [X] `captures/capture7_script_execution.png`
 
 ---
 
