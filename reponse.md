@@ -254,16 +254,16 @@ arp.exe -a
 192.168.2.14          f8-0f-f9-3f-7e-16
 ```
 
-### b) Requête DNS pour www.collegemaisonneuve.qc.ca
+### b) Requête DNS pour www.cmaisonneuve.qc.ca
 
 **Commande utilisée :**
 ```bash
-nslookup.exe www.collegemaisonneuve.qc.ca
+nslookup.exe www.cmaisonneuve.qc.ca
 ```
 
 **Adresse IP obtenue :**
 ```
-L'adresse IP que j'ai obtenu est l'adresse de ma passerelle par défaut (192.168.2.1) car le nom de domaine est inexistant.
+151.101.138.132
 ```
 
 ### c) Commande `dig` pour github.com - TTL
@@ -277,7 +277,7 @@ L'adresse IP que j'ai obtenu est l'adresse de ma passerelle par défaut (192.168
 > 
 > ![alt text](<Captures/Capture d’écran 2026-02-07 132950.png>)
 
-![alt text](<Captures/Capture d’écran 2026-02-07 133426.png>)
+![alt text](<Captures/Capture d’écran 2026-02-12 121815.png>)
 
 ---
 
